@@ -54,9 +54,15 @@ WHERE "account_balance" > 100;
 INSERT INTO accounts (username, city, transactions_completed, transactions_attempted, account_balance)
  VALUES ('david', 'minn', 5, 10, 10000000);
  
-  	--9	The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: How do you delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
+--9	The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: How do you delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
  	
  	
 DELETE FROM "accounts"
 WHERE "city" = 'miami' AND "transactions_completed" < 5 OR "city" = 'phoenix'
 AND "transactions_completed" < 5;
+
+--	10.	Anthony moved to Santa Fe. -stretch goal-
+UPDATE "accounts" 
+SET "city" = 'santa_fe'
+WHERE "username" = 'anthony';
+
